@@ -20,7 +20,7 @@
     "autod": "autod",
     "lint": "eslint . --ext .ts --resolve-plugins-relative-to .",
     "clean": "ets clean",
-    "build:client": "webpack --config webpack.config.client.js"
+    "build:client": "webpack --config webpack/webpack.config.client.js"
   },
   "dependencies": {
     "egg": "^2.6.1",

@@ -1,7 +1,7 @@
 import { Controller } from 'egg'
 import { createElement } from 'react'
 import { renderToString } from 'react-dom/server'
-import App from '../../client/components/app'
+import App from '../../webpack/client/components/app'
 
 export default class SsrController extends Controller {
   async render() {
