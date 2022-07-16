@@ -24,6 +24,6 @@ export default class SsrController extends Controller {
     // `
   
     // ctx.body = html
-    await ctx.render('page.nj', { html: content })
+    await ctx.render('page.nj', { html: content, title: 'egg-react-ssr', desc: 'egg-react-ssr-native' })
   }
 }

@@ -1,6 +1,8 @@
 const path = require('path')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const FileManagerPlugin = require('filemanager-webpack-plugin')
 
 const buildDest = path.resolve(__dirname, '../app/public')
 const njDest = path.resolve(__dirname, '../app/view')
@@ -46,6 +48,22 @@ module.exports = {
 
   plugins: [
     new CleanWebpackPlugin(), 
-    new WebpackManifestPlugin()
+    new WebpackManifestPlugin(),
+    new HtmlWebpackPlugin({
+      filename: 'page.nj',
+      template: path.resolve(__dirname, './template.html')
+    }),
+    new FileManagerPlugin({
+      events: {
+        onEnd: {
+          copy: [
+            {
+              source: path.join(buildDest, 'page.nj'),
+              destination: path.join(njDest, 'page.nj')
+            }
+          ]
+        }
+      }
+    }),
   ],
 }

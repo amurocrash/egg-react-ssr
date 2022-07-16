@@ -4,8 +4,8 @@ const App: FC = () => {
   return (
     <div>
       hello clientXXX
-      <button onClick={ () => console.log('hahaha xxx') }>test</button>
-      <button onClick={ () => console.log('blablabla') }>testx</button>
+      <button onClick={ () => console.log('button1 click') }>test1</button>
+      <button onClick={ () => console.log('button2 click') }>test2</button>
     </div>
   )
 }
